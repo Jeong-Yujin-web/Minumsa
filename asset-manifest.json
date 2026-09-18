@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Minumsa/static/css/main.582e6cee.css",
-    "main.js": "/Minumsa/static/js/main.f1f4c3de.js",
+    "main.js": "/Minumsa/static/js/main.bafed42e.js",
     "static/js/453.5dbd7ec6.chunk.js": "/Minumsa/static/js/453.5dbd7ec6.chunk.js",
     "index.html": "/Minumsa/index.html",
     "main.582e6cee.css.map": "/Minumsa/static/css/main.582e6cee.css.map",
-    "main.f1f4c3de.js.map": "/Minumsa/static/js/main.f1f4c3de.js.map",
+    "main.bafed42e.js.map": "/Minumsa/static/js/main.bafed42e.js.map",
     "453.5dbd7ec6.chunk.js.map": "/Minumsa/static/js/453.5dbd7ec6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.582e6cee.css",
-    "static/js/main.f1f4c3de.js"
+    "static/js/main.bafed42e.js"
   ]
 }
