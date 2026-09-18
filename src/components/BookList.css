@@ -1,0 +1,58 @@
+.book_outer{
+  width: 1310px;
+  margin: 0 auto;
+}
+.book_inner{
+  position: relative;
+}
+.row .col-md-6 a{
+  display: flex;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #6287E5;
+  box-sizing: border-box;
+}
+.book_left{
+  display: flex;
+  position: relative;
+}
+.book_img{
+  width: 205px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  box-sizing: border-box;
+}
+.book_shadow{
+  position: absolute;
+  left: 205px; top: 46px;
+  width: 205px;
+}
+.book_right{
+  width: 430px;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.text{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.text p,
+.icon{
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+.btn_box{
+  width: 330px;
+  position: absolute;
+  bottom: 70px; right: 50px;
+  display: flex;
+}
+.btn_box button:nth-child(1),
+.btn_box button:nth-child(2){
+  margin-right: 10px;
+  flex: 1;
+}
+.heart_btn{
+  width: 40px; height: 40px;
+}

@@ -1,0 +1,20 @@
+.Deatail_outer{
+  width: 1310px;
+  margin: 0 auto;
+}
+.mb-3{
+  width: 870px; 
+  margin-left: 0;
+}
+.tab-content p{
+  text-align: left;
+  padding: 50px 0;
+  width: 870px; 
+}
+.nav-tabs {
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+}

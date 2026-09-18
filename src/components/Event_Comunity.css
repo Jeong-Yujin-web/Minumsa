@@ -1,0 +1,40 @@
+.col-md-3{
+  width: calc((100% - 110px)/12*3 + 20px); 
+  margin-bottom: 30px;
+}
+.event_notice_list{
+}
+.card{
+  overflow: hidden;
+  /* border-radius: 10px; */
+  border: 1px solid #DDE8FD;
+}
+.card_img img{
+  width: 100%
+
+}
+.card_text{
+  padding: 10px;
+  text-align: center;
+  background-color: #DDE8FD;
+  font-size: 0.8rem;
+}
+.card_text p{
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+span{
+  font-size: 0.7rem;
+}
+.event_ing span{
+  color: #6287E5;
+}
+.event_end{
+  background-color: #ccc;
+}
+.event_end span{
+  color: #999;
+}

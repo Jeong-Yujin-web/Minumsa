@@ -1,0 +1,40 @@
+.company_outer{
+  width: 1310px;
+  margin: 0 auto;
+}
+.img_box{
+  display: flex;
+}
+.img_logo img{
+  width: 300px; height: 264px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+  /* display: flex; */
+  /* align-items: center; */
+}
+.img_logo_shadow img{
+  width: 50px; height: 264px;
+  position: absolute;
+}
+.Companybook_img_box{
+  height: 181px;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+.Companybook_img{
+  display: flex;
+  width: 122px; height: 180px;
+}
+.Companybook_img:first-child{
+  margin-left: 110px;
+}
+.text_box{
+  text-align: left;
+}
+.text_box p:first-child{
+  font-weight: 600;
+}
+.img_shadow img{
+  width: 55px; height: 180px;
+}

@@ -1,38 +1,57 @@
 .App {
   text-align: center;
+  color: #292929;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+  background-color: #6287E5;
+  height: 60px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar_outer{
+  margin: 0 auto;
+  width: 1280px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.d-flex{
+  width:350px;
+}
+.search-button{
+  color:#6287E5;
+  width:80px;
+}
+/* FOOTER */
+.footer_outer{
+  border-top: 1px solid #ccc;
+  padding: 30px 0;
+  font-size: 0.8rem;
+  margin-top: 100px;
+}
+.footer_inner{
+  width: 1310px;
+  margin: 0 auto;
+}
+.footer_info_box01{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
-
-.App-link {
-  color: #61dafb;
+.footer_info_box01 p{
+  margin-right: 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer_info_box01 p:last-child{
+  margin-right: 0;
+}
+.footer_info_box02{
+  text-align: left;
+}
+.sns_box{
+  position: absolute;
+  right: 0;
+}
+.sns_box a{
+  margin-left: 10px;
+}
+.sns_box svg{
+  padding: 4px;
+  border-radius: 5px;
+  background-color: #DDE8FD;
+  fill: #fff;
+  width: 30px; height: 30px;
 }
