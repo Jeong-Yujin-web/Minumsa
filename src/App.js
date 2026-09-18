@@ -81,7 +81,7 @@ function App() {
         ))}
       </>
       <Routes>
-        <Route path='/' element={<Home/>}>
+        <Route path='/test' element={<Home/>}>
         </Route>
         <Route path='/book' element={<Book/>}>
           <Route path=':type' element={<BookList/>}/>
