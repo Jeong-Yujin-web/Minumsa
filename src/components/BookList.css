@@ -44,9 +44,11 @@
 }
 .btn_box{
   width: 330px;
+  display: flex;
+}
+.booklist_btn{
   position: absolute;
   bottom: 70px; right: 50px;
-  display: flex;
 }
 .btn_box button:nth-child(1),
 .btn_box button:nth-child(2){

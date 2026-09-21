@@ -2,12 +2,10 @@
   width: calc((100% - 110px)/12*3 + 20px); 
   margin-bottom: 30px;
 }
-.event_notice_list{
-}
 .card{
   overflow: hidden;
   /* border-radius: 10px; */
-  border: 1px solid #DDE8FD;
+  border: 1px solid #eff4ff;
 }
 .card_img img{
   width: 100%
@@ -16,7 +14,7 @@
 .card_text{
   padding: 10px;
   text-align: center;
-  background-color: #DDE8FD;
+  background-color: #eff4ff;
   font-size: 0.8rem;
 }
 .card_text p{

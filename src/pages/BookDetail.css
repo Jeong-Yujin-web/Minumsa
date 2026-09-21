@@ -1,20 +1,269 @@
 .Deatail_outer{
+  --sticky-top: 100px;
   width: 1310px;
   margin: 0 auto;
 }
-.mb-3{
-  width: 870px; 
-  margin-left: 0;
+.bookDetail_left,
+.bookDetail_right{
+  height: 720px;
+  border-radius: 20px;
 }
-.tab-content p{
+.bookDetail_left{
+  border: 1px solid #ccc;
+  padding: 50px 100px;
+}
+.bookDetail_left div img{
+  width: 420px; height: 620px;
+}
+.bookDetail_right{
+  background-color: #eff4ff;
+  padding: 50px;
+}
+.bookDetail_right p{
+  margin-right: 10px;
+}
+.price_box{
+  display: flex;
+  align-items: start;
+}
+.bookDetail_right .price_box p:first-child{
+  color: #6287E5;
+  font-weight: bold;
+}
+.bookDetail_right .price_box p:last-child{
+  text-decoration: line-through;
+  color: #999;
+}
+.price_info{
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  margin-bottom: 15px;
+}
+.price_info .bookDetailTitle{
+  margin-top: 0;                /* 가격 행 라벨은 위 여백 제거 */
+}
+.price_info_box .price_info022{
+  display: flex;
+}
+
+/* 결제혜택 토글 (체크박스 #card) */
+#card{
+  display: none;
+}
+.card_box{
+  display: none;
+  width: 70%;
+  padding: 10px;
+  margin-left: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+#card:checked ~ .card_box{
+  display: block;
+}
+.card_box_inner{
+  display: flex;
+}
+.card_logo{
+  width: 90px; height: 30px;
+  margin-right: 10px;
+}
+.card_info p{
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  text-align: start;
+}
+
+/* 책 한 줄 소개 */
+.oneline_box p{
   text-align: left;
-  padding: 50px 0;
-  width: 870px; 
 }
-.nav-tabs {
-  justify-content: flex-start;
+.oneline_box .oneline_review{
+  display: flex;
+}
+
+/* 공통 제목 */
+.bookDetailTitle{
+  text-align: left;
+  font-size: 1.0rem;
+  font-weight: bold;
+  margin-top: 60px;
+}
+
+/* 탭 영역 */
+.bookDetail_info_outer{
+  position: relative;
+}
+.bookDetail_info_outer .nav-tabs{
   position: sticky;
   top: 0;
   z-index: 100;
+  margin: 50px 0 16px;
   background: #fff;
+}
+.detail_section{
+  scroll-margin-top: var(--sticky-top);
+}
+
+.bookDetail_info_outer .tab-content{
+  width: 870px;
+}
+.bookDetail_info_outer .tab-content > .tab-pane{
+  display: block;
+  margin-bottom: 100px;
+}
+.bookDetail_info_outer .tab-content p{
+  text-align: left;
+  font-size: 0.8rem;
+}
+.bookDetail_info_outer .tab-content .sub_text{
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+/* ---------- 리뷰 ---------- */
+.review_title_box{
+  position: relative;
+}
+.review_btn{
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 210px; height: 40px;
+  background-color: #eff4ff;
+  border: none;
+  color: #6287E5;
+}
+.review_btn:hover{
+  color: #fff;
+  background-color: #6287E5;
+}
+.review_text_box{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.review_text_box .bookTitle{
+  margin: 20px 30px;
+}
+.ai_box{
+  margin: 0 30px 20px;
+  padding: 20px;
+  background-color: #eff4ff;
+  border-radius: 10px;
+  text-align: left;
+}
+.ai_title{
+  display: flex;
+  align-items: center;
+}
+.ai_title img{
+  width: 26px; height: 27px;
+  margin-right: 5px;
+}
+
+/*이 분야 추천 도서*/
+.detail_aside{
+  position: absolute;
+  top: 100px; right: 0;
+  bottom: 0;               
+  width: 320px;
+}
+.detail_aside_inner{
+  position: sticky;             
+  top: var(--sticky-top);
+}
+.recommend_book{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.recommend_book img{
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+.recommend_info{
+  flex: 1;
+}
+.recommend_info p{
+  margin: 0;
+  text-align: left;
+  font-size: 11px;
+  color: #999;
+}
+.recommend_rank{
+  position: relative;
+  width: 24px;
+  height: 30px;
+  flex-shrink: 0;
+}
+.recommend_rank svg{
+  position: absolute;
+  width: 24px;
+  height: 30px;
+  fill: #6287E5;
+  left: 0;
+  top: 0;
+}
+.recommend_info .recommend_title{
+  color: #666;
+  font-weight: bold;
+}
+.recommend_rank p{
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 24px;
+  text-align: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  z-index: 1;
+}
+.recommend_info .title_color{
+  margin-left: 0;
+}
+
+
+.fix_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  border-top: 1px solid #6287E5;
+}
+
+.fix_inner {
+  width: 1310px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+  box-sizing: border-box;
+
+}
+.total_count{
+  display: flex;
+  
+}
+.total_price{
+  display: flex;
+  font-weight: bold;
+}
+.total_price p{
+  margin: 0 10px;
+}
+.total_count_control {
+  display: flex;
+  align-items: center;
+}
+.total_count_control p{
+  font-size: 1.0rem;
+  margin: 0 30px;
 }

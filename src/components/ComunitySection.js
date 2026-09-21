@@ -21,7 +21,7 @@ export default function ComunitySection() {
               <a href={notice.link} target='_blank' rel='noopener noreferrer'>
                 <div className='card'>
                   <div className="card_img">
-                    <img src={notice.image} alt={notice.title} />
+                    <img src={`${process.env.PUBLIC_URL + notice.image}`} alt={notice.title} />
                   </div>
                   <div className="card_text">
                     <p className='text_title'>{notice.title}</p>

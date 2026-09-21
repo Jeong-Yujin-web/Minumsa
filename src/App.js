@@ -5,7 +5,8 @@ import './App.css';
 import { Button, Container, Nav, NavDropdown, Navbar, Offcanvas, Form } from 'react-bootstrap';
 import {Routes, Route} from 'react-router-dom';
 //아이콘
-import { FaRegUser,FaShoppingCart }from 'react-icons/fa';import { GoHeartFill } from "react-icons/go";
+import { FaRegUser,FaShoppingCart }from 'react-icons/fa';
+import { GoHeartFill } from "react-icons/go";
 
 import Home from './pages/Home';
 import Book from './pages/Book';
@@ -81,7 +82,7 @@ function App() {
         ))}
       </>
       <Routes>
-        <Route path='/test' element={<Home/>}>
+        <Route path='/' element={<Home/>}>
         </Route>
         <Route path='/book' element={<Book/>}>
           <Route path=':type' element={<BookList/>}/>

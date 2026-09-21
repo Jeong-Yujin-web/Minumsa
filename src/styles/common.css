@@ -2,6 +2,9 @@
 a{text-decoration: none;}
 li{list-style: none;}
 img{width: 100%; height: auto;}
+hr{
+  color: #ccc;
+}
 .title{
   font-size: 1.6rem;
   font-weight: bold;

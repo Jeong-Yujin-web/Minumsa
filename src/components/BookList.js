@@ -33,7 +33,7 @@ export default function BookList() {
                   <Link to={`/book/${book.category}/${book.id}`}  >
                   <div className="book_left">
                     <div className="book_img">
-                      <img src={book.image} alt="도서 상품" />
+                      <img src={`${process.env.PUBLIC_URL}${book.image}`} alt="도서 상품" />
                     </div>
                     <div className="book_shadow">
                       <img src={process.env.PUBLIC_URL + '/images/any/shadow.png'} alt="상품 그림자" />
@@ -61,7 +61,7 @@ export default function BookList() {
                     </div>
                   </div>
                   </Link>
-                  <div className="btn_box">
+                  <div className="btn_box booklist_btn">
                     <button>장바구니</button>
                     <button>바로구매</button>
                     <button className='heart_btn'><GoHeart /></button>

@@ -44,7 +44,7 @@ export default function BookSection({ type,isBest }) {
             >
               <div className="booksection_img">
                 <img
-                  src={booksection.image}
+                  src={`${process.env.PUBLIC_URL}${booksection.image}`}
                   alt="도서 상품"
                 />
                 {isBest && (

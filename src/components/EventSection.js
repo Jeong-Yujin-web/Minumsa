@@ -35,7 +35,7 @@ export default function EventSection() {
               <a href={event.link} target='_blank' rel='noopener noreferrer' >
                 <div className='card'>
                   <div className="card_img">
-                    <img src={event.image} alt={event.title} />
+                    <img src={`${process.env.PUBLIC_URL + event.image}`} alt={event.title} />
                     <div className="event_come">
                       {getEventStatus(event) === 'upcoming' && (
                         <span className="event_badge upcoming">
