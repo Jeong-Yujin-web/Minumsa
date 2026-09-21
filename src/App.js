@@ -1,9 +1,12 @@
 // import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 //부트스트랩
 import { Button, Container, Nav, NavDropdown, Navbar, Offcanvas, Form } from 'react-bootstrap';
-import {Routes, Route} from 'react-router-dom';
+
 //아이콘
 import { FaRegUser,FaShoppingCart }from 'react-icons/fa';
 import { GoHeartFill } from "react-icons/go";
@@ -24,6 +27,7 @@ import ComunitySection from './components/ComunitySection';
 import EventSection from './components/EventSection';
 
 function App() {
+  const userName = useSelector((state) => state.user.name);
   return (
     <div className="App">
       <>
@@ -57,6 +61,7 @@ function App() {
                   </Form>
                   </Nav>
                   <Nav className="justify-content-end flex-grow-1 pe-3" >
+                    <GnbLink to='/login'><p>{userName ? `${userName}님` : '로그인'}</p></GnbLink>
                     <NavDropdown
                       title="도서"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}

@@ -5,7 +5,7 @@
 .book_inner{
   position: relative;
 }
-.row .col-md-6 a{
+.book_inner a{
   display: flex;
   margin-bottom: 50px;
   border-bottom: 1px solid #6287E5;

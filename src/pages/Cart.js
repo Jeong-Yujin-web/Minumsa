@@ -8,6 +8,12 @@ import Table from 'react-bootstrap/Table';
 
 export default function Cart() {
   const state=useSelector((state)=>state);
+  const totalPrice = state.cart.reduce((total, item) => {
+  const discountPrice =
+    item.price * (1 - item.discountRate / 100);
+
+  return total + discountPrice * item.count;
+}, 0);
   const dispatch=useDispatch();
   return (
     <div>
@@ -15,10 +21,9 @@ export default function Cart() {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
             <th>상품명</th>
             <th>수량</th>
-            <th>변경버튼</th>
+            <th>총 금액</th>
           </tr>
         </thead>
         <tbody>
@@ -26,13 +31,19 @@ export default function Cart() {
             state.cart.map((item, i)=>{
               return(
                 <tr key={i}>
-                  <td>{state.cart[i].id}</td>
-                  <td>{state.cart[i].title}</td>
-                  <td>{state.cart[i].count}</td>
+                  <td>{item.title}</td>
                   <td>
-                    <button onClick={()=>dispatch(addCount(state.cart[i].id))}>+</button>
-                    <button onClick={()=>dispatch(subCount(state.cart[i].id))}>-</button>
-                    <button onClick={()=>dispatch(deleteItem(state.cart[i].id))}>삭제</button>
+                    <button onClick={()=>dispatch(addCount(item.id))}>+</button>
+                    {item.count}
+                    <button onClick={()=>dispatch(subCount(item.id))}>-</button>
+                    <button onClick={()=>dispatch(deleteItem(item.id))}>삭제</button>
+                  </td>
+                  <td>
+                    {(
+                      item.price *
+                      (1 - item.discountRate / 100) *
+                      item.count
+                    )}원
                   </td>
                 </tr>
               );

@@ -4,6 +4,8 @@ import '../styles/common.css';
 import { useParams,Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import { Container, Row, Col, Carousel, Tabs, Tab } from 'react-bootstrap';
+import { addItem } from '../store/store';
+import { useDispatch } from 'react-redux';
 
 import { FaAngleDown } from "react-icons/fa6";
 import { FaStar, FaBookmark } from "react-icons/fa";
@@ -13,12 +15,13 @@ import bookData from '../data/books';
 
 export default function BookDetail() {
   const { type, id } = useParams();
+  const dispatch=useDispatch();
   const BookDetail = bookData.find(
     (BookDetail) => {
       return BookDetail.id === Number(id);
     });
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const handleClick_min = () => setCount(Math.max(0, count - 1));
   const handleClick_plu = () => setCount(count + 1);
 
@@ -272,7 +275,9 @@ export default function BookDetail() {
             <button className='heart_btn' onClick={handleClick_plu}>+</button>
           </div>
           <div className="btn_box">
-            <button>장바구니</button>
+            <button onClick={()=>dispatch(addItem({id:BookDetail.id, title:BookDetail.title, 
+            price: BookDetail.price,
+            discountRate: BookDetail.discountRate,count:count}))}>장바구니</button>
             <button>바로구매</button>
             <button className='heart_btn'><GoHeart /></button>
           </div>

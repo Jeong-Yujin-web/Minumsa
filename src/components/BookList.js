@@ -2,6 +2,8 @@ import './BookList.css';
 import '../styles/common.css';
 // import React from 'react'
 import bookData from '../data/books';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../store/store';
 
 import{Link, useParams} from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
@@ -10,6 +12,7 @@ import { GoHeart } from "react-icons/go";
 
 export default function BookList() {
   const {type}=useParams();
+  const dispatch = useDispatch();
   const books=bookData.filter((book)=> book[type] === true);
   const titleMap = {
     isNew: '신간 도서',
@@ -62,7 +65,12 @@ export default function BookList() {
                   </div>
                   </Link>
                   <div className="btn_box booklist_btn">
-                    <button>장바구니</button>
+                    <button onClick={()=> dispatch(addItem({
+                    id: book.id,
+                    title: book.title,
+                    price: book.price,
+                    discountRate: book.discountRate,
+                    count: 1}))}>장바구니</button>
                     <button>바로구매</button>
                     <button className='heart_btn'><GoHeart /></button>
                   </div>

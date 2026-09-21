@@ -13,7 +13,33 @@
   padding: 50px 100px;
 }
 .bookDetail_left div img{
-  width: 420px; height: 620px;
+  width: 420px; height: 600px;
+}
+.carousel-inner{
+  align-items: center;
+}
+.carousel-indicators{
+  bottom: -40px;
+}
+.carousel-indicators [data-bs-target]{
+  background-color: #eff4ff;
+}
+.carousel-indicators [data-bs-target].active{
+  background-color: #6287E5;
+}
+.carousel-control-prev,
+.carousel-control-next{
+  align-items: center;
+  margin: auto -83px;
+  width: 60px; height: 60px;
+  color: #fff;
+  background-color: #eff4ff;
+  border-radius: 10px;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover{
+  color: #eff4ff;
+  background-color: #6287E5;
 }
 .bookDetail_right{
   background-color: #eff4ff;

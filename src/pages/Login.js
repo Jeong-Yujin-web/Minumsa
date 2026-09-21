@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { SiNaver } from 'react-icons/si';
 import { FaApple, FaGoogle } from 'react-icons/fa';
 import styled from 'styled-components';
-import userList from '../data/users';
+import userList from '../data/users';import { useSelector, useDispatch } from 'react-redux';
+import { changeName } from '../store/store';
+import { logout } from '../store/store';
+import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
   width: 500px;
@@ -136,6 +139,9 @@ const LoginBtn = styled.button`
 `;
 
 export default function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userName = useSelector((state) => state.user.name);
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
   const [saveId, setSaveId] = useState(false);
@@ -176,14 +182,28 @@ export default function Login() {
     }
 
     if (user) {
+      dispatch(changeName(user.name));
       alert(`${user.name}님 로그인 성공`);
-      window.location.href = `${process.env.PUBLIC_URL}/`;
+      navigate('/');
     } else {
       if (!saveId) setUserId('');
       setUserPw('');
       alert('아이디 또는 비밀번호가 틀렸습니다.');
     }
   };
+  
+  if (userName) {
+    return (
+    <Wrapper>
+      <h3 className="title">{userName}님</h3>
+      <p>현재 로그인되어 있습니다.</p>
+
+      <button onClick={() => dispatch(logout())} style={{marginTop:'30px', width:'100px', padding:'5px'}}>
+        로그아웃
+      </button>
+    </Wrapper>
+    );
+  }
 
   return (
     <Wrapper>

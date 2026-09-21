@@ -1,17 +1,20 @@
 import {configureStore, createSlice} from '@reduxjs/toolkit';
-const user=createSlice({
-  name:'user',
-  initialState: {name:'홍길동'},
+const user = createSlice({
+  name: 'user',
+  initialState: {
+    name: ''
+  },
   reducers: {
-    // changeName:(state)=>{
-    //   state.name=state.name;
-    // 키,키값으로 써도 되고}
-    changeName(state) {
-      state.name=state.name;
+    changeName(state, action) {
+      state.name = action.payload;
+    },
+    logout(state) {
+      state.name = '';
     },
   },
 });
-export const {changeName} = user.actions;
+
+export const { changeName, logout } = user.actions;
 // user.slice
 const cart=createSlice({
   name: 'cart',
@@ -20,17 +23,14 @@ const cart=createSlice({
     addItem(state,action){
       const index =state.findIndex((findId) => findId.id === action.payload.id);
       if (index > -1){
-      // if (index >= 0){과 같지만 인데스는 0부터 시작하니까
         state[index].count++;
       }else{
         state.push(action.payload);
-        // 없으면 push해서 하나 만들어올려라
       }
     },
     deleteItem(state,action){
       const index=state.findIndex((findId)=>findId.id === action.payload);
       state.splice(index,1);
-      // splice삽입 삭제가 되는것
     },
     addCount(state, action){
       const index=state.findIndex((findId)=>findId.id === action.payload);
