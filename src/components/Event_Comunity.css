@@ -5,7 +5,7 @@
 .card{
   overflow: hidden;
   /* border-radius: 10px; */
-  border: 1px solid #eff4ff;
+  border: 1px solid #DDE8FD;
 }
 .card_img img{
   width: 100%
@@ -14,7 +14,7 @@
 .card_text{
   padding: 10px;
   text-align: center;
-  background-color: #eff4ff;
+  background-color: #DDE8FD;
   font-size: 0.8rem;
 }
 .card_text p{

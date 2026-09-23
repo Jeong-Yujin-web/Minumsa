@@ -3,12 +3,13 @@ import '../styles/common.css';
 // import React from 'react'
 import bookData from '../data/books';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../store/store';
+import { addItem } from '../slices/cartSlice';
+import { addWish } from '../slices/wishSlice';
 
 import{Link, useParams} from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
 import { FaStar } from "react-icons/fa";
-import { GoHeart } from "react-icons/go";
+import { GoHeartFill } from "react-icons/go";
 
 export default function BookList() {
   const {type}=useParams();
@@ -65,14 +66,28 @@ export default function BookList() {
                   </div>
                   </Link>
                   <div className="btn_box booklist_btn">
-                    <button onClick={()=> dispatch(addItem({
+                    <button className='btn_submit' onClick={()=> dispatch(addItem({
                     id: book.id,
                     title: book.title,
                     price: book.price,
+                    author: book.author,
+                    publisher: book.publisher,
+                    publishDate: book.publishDate,
+                    category: book.category,
+                    image:book.image,
                     discountRate: book.discountRate,
                     count: 1}))}>장바구니</button>
-                    <button>바로구매</button>
-                    <button className='heart_btn'><GoHeart /></button>
+                    <button className='btn_submit'>바로구매</button>
+                    <button className='heart_btn' onClick={()=> dispatch(addWish({
+                    id: book.id,
+                    title: book.title,
+                    price: book.price,
+                    author: book.author,
+                    publisher: book.publisher,
+                    publishDate: book.publishDate,
+                    category: book.category,
+                    image:book.image,
+                    discountRate: book.discountRate}))}><GoHeartFill /></button>
                   </div>
                 </Col>
               )

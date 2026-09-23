@@ -1,15 +1,17 @@
 import '../pages/BookDetail.css';
 import '../styles/common.css';
+import './BookDetail.css';
 
 import { useParams,Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import { Container, Row, Col, Carousel, Tabs, Tab } from 'react-bootstrap';
-import { addItem } from '../store/store';
+import { addItem } from '../slices/cartSlice';
+import { addWish } from '../slices/wishSlice';
 import { useDispatch } from 'react-redux';
 
 import { FaAngleDown } from "react-icons/fa6";
 import { FaStar, FaBookmark } from "react-icons/fa";
-import { GoHeart } from "react-icons/go";
+import { GoHeartFill } from "react-icons/go";
 
 import bookData from '../data/books';
 
@@ -20,9 +22,9 @@ export default function BookDetail() {
     (BookDetail) => {
       return BookDetail.id === Number(id);
     });
-
+    
   const [count, setCount] = useState(1);
-  const handleClick_min = () => setCount(Math.max(0, count - 1));
+  const handleClick_min = () => setCount(Math.max(1, count - 1));
   const handleClick_plu = () => setCount(count + 1);
 
   const sectionRefs = {
@@ -67,15 +69,15 @@ export default function BookDetail() {
               <div className="price_box">
                 <p>{BookDetail.discountRate}%</p>
                 <p className='bookTitle'>{BookDetail.price * (1 - BookDetail.discountRate / 100)}원</p>
-                <p>{BookDetail.price}</p>
+                <p>{BookDetail.price}원</p>
               </div>
-              <div className="price_info_box">
                 <div className="price_info">
                   <p className='bookDetailTitle'>통합포인트</p>
-                  <div>
-                    <p>{BookDetail.price * (0.05)}P(5% 적립)</p>
+                  <div className="price_info011">
+                    <p>{BookDetail.price * (0.05)}P</p>
+                    <span>(5% 적립)</span>
                     <p>5만원 이상 구매 시 2천원 추가 적립</p>
-                  </div>
+                  </div> 
                 </div>
                 <div className="price_info">
                   <p className='bookDetailTitle'>결제혜택</p>
@@ -106,16 +108,18 @@ export default function BookDetail() {
                     </div>
                   </div>
                 </div>
-              </div>
               <div className="price_info">
                 <p className='bookDetailTitle'>배송비</p>
                 <p>무료배송</p>
               </div>
               <div className="price_info">
                 <p className='bookDetailTitle'>배송안내</p>
-                <div>
-                  <p>예약판매 10/30(금) 출고예정</p>
-                  <p>로그인 후 정확한 배송 안내 받아보세요!</p>
+                <div className="delivery_notice">
+                  <p style={{color:'#6287E5'}}>예약판매 10/30 (금) 출고예정</p>
+                  <div className="login_line">
+                    <Link style={{color:'#6287E5'}} to={'/Login'}>로그인</Link>
+                    <p>후 정확한 배송 안내 받아보세요!</p>
+                  </div>
                 </div>
               </div>
               <hr />
@@ -125,7 +129,7 @@ export default function BookDetail() {
                 <div className="oneline_review">
                   <p><FaStar /></p>
                   <p>{BookDetail.rating}</p>
-                  <p>{BookDetail.reviewCount}</p>
+                  <p>({BookDetail.reviewCount})</p>
                 </div>
               </div>
             </div>
@@ -230,10 +234,9 @@ export default function BookDetail() {
                 .map((book, index) => (
                   <Link
                     to={`/book/${type}/${book.id}`}
-                    className="recommend_book"
                     key={book.id}
                   >
-                    <div className="recommend_book" key={book.id}>
+                    <div className="recommend_book">
                       <span className='recommend_rank'>
                         <FaBookmark />
                         <p>
@@ -275,11 +278,36 @@ export default function BookDetail() {
             <button className='heart_btn' onClick={handleClick_plu}>+</button>
           </div>
           <div className="btn_box">
-            <button onClick={()=>dispatch(addItem({id:BookDetail.id, title:BookDetail.title, 
-            price: BookDetail.price,
-            discountRate: BookDetail.discountRate,count:count}))}>장바구니</button>
-            <button>바로구매</button>
-            <button className='heart_btn'><GoHeart /></button>
+            <button 
+              className='btn_submit'
+              onClick={()=>dispatch(addItem({
+              id:BookDetail.id, 
+              title:BookDetail.title, 
+              image:BookDetail.image,
+              author: BookDetail.author,
+              publisher: BookDetail.publisher,
+              publishDate: BookDetail.publishDate,
+              category: BookDetail.category,
+              price: BookDetail.price,
+              discountRate: BookDetail.discountRate,
+              count:count}))}>
+              장바구니
+            </button>
+            <button className='btn_submit'>바로구매</button>
+            
+            <button className='heart_btn' onClick={()=>dispatch(addWish({
+              id:BookDetail.id,
+              title:BookDetail.title,
+              image:BookDetail.image,
+              author: BookDetail.author,
+              publisher: BookDetail.publisher,
+              publishDate: BookDetail.publishDate,
+              category: BookDetail.category,
+              price:BookDetail.price,
+              discountRate:BookDetail.discountRate,
+              count:count}))}>
+              <GoHeartFill />
+            </button>
           </div>
         </div>
       </div>

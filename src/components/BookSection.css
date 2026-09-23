@@ -66,21 +66,20 @@ li{
 .booksection_text p:nth-child(1){
   font-weight: bold;
 }
+.booksection_text p:last-child{
+  font-size: 0.8rem;
+}
 .slider_control{
-  width: 1310px;
-  margin: 0 auto;
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .slider_control .page_btn{
-  font-size: 1.4rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .slider_control .page_btn p{
-  margin: 15px 10px;
+  margin: 15px 5px;
 }
 .slider_control .page_btn p:nth-child(1){
   font-weight: bold;

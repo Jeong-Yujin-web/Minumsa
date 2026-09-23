@@ -15,14 +15,13 @@
 .bookDetail_left div img{
   width: 420px; height: 600px;
 }
-.carousel-inner{
-  align-items: center;
-}
 .carousel-indicators{
-  bottom: -40px;
+  bottom: -50px;
 }
 .carousel-indicators [data-bs-target]{
-  background-color: #eff4ff;
+  background-color: #ccc;
+  width: 10px; height: 10px;
+  border-radius: 50%;
 }
 .carousel-indicators [data-bs-target].active{
   background-color: #6287E5;
@@ -31,21 +30,21 @@
 .carousel-control-next{
   align-items: center;
   margin: auto -83px;
-  width: 60px; height: 60px;
-  color: #fff;
-  background-color: #eff4ff;
+  background-color: #ccc;
   border-radius: 10px;
+  width: 40px; height: 40px;
 }
 .carousel-control-prev:hover,
 .carousel-control-next:hover{
-  color: #eff4ff;
-  background-color: #6287E5;
+  border: none;
+  background-color: #999;
+  border-radius: 10px;
 }
 .bookDetail_right{
-  background-color: #eff4ff;
+  background-color: #DDE8FD;
   padding: 50px;
 }
-.bookDetail_right p{
+.price_box p{
   margin-right: 10px;
 }
 .price_box{
@@ -66,14 +65,36 @@
   text-align: right;
   margin-bottom: 15px;
 }
-.price_info .bookDetailTitle{
-  margin-top: 0;                /* 가격 행 라벨은 위 여백 제거 */
-}
-.price_info_box .price_info022{
+.price_info011 {
   display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;  
+  align-items: center;
+}
+.price_info011 p{
+  text-align: right;
+}
+.price_info011 > span {
+  margin-left: 5px;
+  font-weight: lighter;
+}
+.price_info011 > p:last-child{
+  flex-basis: 100%;
+  text-align: right;
+  font-weight: lighter;
+  margin-top: 4px;
 }
 
-/* 결제혜택 토글 (체크박스 #card) */
+.price_info .bookDetailTitle{
+  margin-top: 0; 
+}
+.price_info022{
+  display: flex;
+}
+.price_info022 label{
+  margin-left: 10px;
+}
+
 #card{
   display: none;
 }
@@ -82,6 +103,7 @@
   width: 70%;
   padding: 10px;
   margin-left: auto;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 10px;
 }
@@ -101,23 +123,30 @@
   text-align: start;
 }
 
-/* 책 한 줄 소개 */
 .oneline_box p{
   text-align: left;
+  margin-right: 10px;
 }
 .oneline_box .oneline_review{
   display: flex;
 }
 
-/* 공통 제목 */
 .bookDetailTitle{
   text-align: left;
   font-size: 1.0rem;
   font-weight: bold;
   margin-top: 60px;
 }
-
-/* 탭 영역 */
+.login_line{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+  gap: 4px;
+}
+.login_line p{
+  margin: 0;
+}
 .bookDetail_info_outer{
   position: relative;
 }
@@ -156,8 +185,9 @@
   position: absolute;
   right: 0; bottom: 0;
   width: 210px; height: 40px;
-  background-color: #eff4ff;
+  background-color: #DDE8FD;
   border: none;
+  border-radius: 10px;
   color: #6287E5;
 }
 .review_btn:hover{
@@ -167,6 +197,7 @@
 .review_text_box{
   border: 1px solid #ccc;
   border-radius: 10px;
+  margin-top: 15px;
 }
 .review_text_box .bookTitle{
   margin: 20px 30px;

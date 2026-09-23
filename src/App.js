@@ -17,7 +17,7 @@ import Company from './pages/Company';
 import Comunity from './pages/Comunity';
 import Event from './pages/Event';
 import Cart from './pages/Cart';
-import Like from './pages/Like';
+import Wish from './pages/Wish';
 import Login from './pages/Login';
 import BookDetail from './pages/BookDetail';
 
@@ -49,36 +49,37 @@ function App() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <Nav className="justify-content-start flex-grow-1 pe-3" style={{justifyContent:'flex-start'}}>
-                  <Form className="d-flex" >
+                  <Nav className="justify-content-end align-items-center pe-3" style={{justifyContent:'flex-start'}}>
+                  <Form className="d-flex search_form" >
                     <Form.Control
                       type="search"
                       placeholder="도서명이나 저자를 검색하세요"
                       className="me-2"
                       aria-label="Search"
+                      style={{color:'#fff',fontSize:'0.8rem', border:'none'}}
                     />
-                    <Button variant="light" className="search-button" >Search</Button>
+                    <Button variant="light" className="search-button">검색</Button>
                   </Form>
                   </Nav>
-                  <Nav className="justify-content-end flex-grow-1 pe-3" >
-                    <GnbLink to='/login'><p>{userName ? `${userName}님` : '로그인'}</p></GnbLink>
+                  <Nav className="justify-content-end flex-grow-1 pe-3 align-items-center" >
                     <NavDropdown
                       title="도서"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
+                      style={{color:'#fff',fontSize:'0.8rem'}}
                     >
-                    <GnbLink to='/book/isNew'>신간 도서</GnbLink>
-                    <GnbLink to='/book/isBest'>베스트 도서</GnbLink>
-                    <GnbLink to='/book/isRecommend'>추천 도서</GnbLink>
-                    <GnbLink to='/book/isSecond'>중고 도서</GnbLink>
-                    <GnbLink to='/book/isElectron'>전자 도서</GnbLink>
+                    <GnbLink to='/book/isNew'><p>신간 도서</p></GnbLink>
+                    <GnbLink to='/book/isBest'><p>베스트 도서</p></GnbLink>
+                    <GnbLink to='/book/isRecommend'><p>추천 도서</p></GnbLink>
+                    <GnbLink to='/book/isSecond'><p>중고 도서</p></GnbLink>
+                    <GnbLink to='/book/isElectron'><p>전자 도서</p></GnbLink>
                     </NavDropdown>
                     <GnbLink to='/company'>소개</GnbLink>
                     <GnbLink to='/event/event'>이벤트</GnbLink>
                     <GnbLink to='/comunity/notice'>커뮤니티</GnbLink>
-                    <GnbLink to='/like'><GoHeartFill />
-                    </GnbLink>
-                    <GnbLink to='/cart'><FaShoppingCart /></GnbLink>
-                    <GnbLink to='/login'><FaRegUser /></GnbLink>
+                    <p className="line">|</p>
+                    <GnbLink to='/wish'>찜</GnbLink>
+                    <GnbLink to='/cart'>장바구니</GnbLink>
+                    <GnbLink to='/login'><p style={{marginBottom:'0', color:'#fff'}}>{userName ? `${userName}님` : '로그인'}</p></GnbLink>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
@@ -101,7 +102,7 @@ function App() {
         <Route path='/comunity' element={<Comunity/>}>
           <Route path=':type' element={<ComunitySection/>}/>
         </Route>
-        <Route path='/like' element={<Like/>}>
+        <Route path='/wish' element={<Wish/>}>
         </Route>
         <Route path='/cart' element={<Cart/>}>
         </Route>

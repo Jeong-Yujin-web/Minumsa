@@ -3,8 +3,8 @@ import { SiNaver } from 'react-icons/si';
 import { FaApple, FaGoogle } from 'react-icons/fa';
 import styled from 'styled-components';
 import userList from '../data/users';import { useSelector, useDispatch } from 'react-redux';
-import { changeName } from '../store/store';
-import { logout } from '../store/store';
+import { changeName } from '../slices/userSlice';
+import { logout } from '../slices/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
@@ -83,7 +83,7 @@ const SubmitButton = styled.button`
   box-sizing: border-box;
   cursor: pointer;
   &:hover {
-    background-color: #eff4ff;
+    background-color: #DDE8FD;
     color: #6287E5;
   }
 `;
@@ -112,7 +112,7 @@ const LoginBtn = styled.button`
   background-color: ${props => props.$bg};
   cursor: pointer;
   &:hover {
-    background-color: #eff4ff;
+    background-color: #DDE8FD;
     p {
       color: #6287E5;
     }

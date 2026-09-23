@@ -2,6 +2,9 @@
 a{text-decoration: none;}
 li{list-style: none;}
 img{width: 100%; height: auto;}
+p{
+  margin-bottom: 0;
+}
 hr{
   color: #ccc;
 }
@@ -22,31 +25,52 @@ hr{
   margin-bottom: 35px;
 }
 .prev_btn,
-.next_btn,
-.heart_btn,
-button{
-  border: 1px solid #ccc;
-  background-color: #fff;
-  border-radius: 10px;
-  color: #ccc;
+.next_btn{
+  border-radius: 5px;
+  width: 25px; height: 25px;
 }
 .prev_btn,
-.next_btn{
-  width: 35px; height: 35px;
+.next_btn,
+.heart_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
 }
-button:hover{
-  border: 1px solid #6287E5;
-  color: #6287E5;
-}
-button svg{
-  font-size: 1.6rem;
-  font-weight: bold;
-  fill: #ccc;
+.heart_btn{
   border-radius: 10px;
+  width: 30px; height: 30px;
 }
-button:hover svg{
-  fill: #6287E5;
+.prev_btn:hover,
+.next_btn:hover{
+  border: none;
+  background-color: #ccc;
+}
+.heart_btn:hover{
+  border: none;
+  background-color: #6287E5;
+}
+.btn_submit{
+  width: 100px; height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #DDE8FD;
   color: #6287E5;
+}
+.btn_submit:hover{
+  color: #fff;
+  background-color: #6287E5;
+}
+.prev_btn svg,
+.next_btn svg,
+.heart_btn svg{
+  fill:#ccc;
+}
+.prev_btn:hover svg,
+.next_btn:hover svg,
+.heart_btn:hover svg{
+  fill:#fff;
 }
 .row{
   margin: 0;

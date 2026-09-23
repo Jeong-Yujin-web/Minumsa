@@ -58,7 +58,7 @@ export default function BookSection({ type,isBest }) {
               </div>
               <div className="booksection_text">
                 <p>{booksection.title}</p>
-                <p>글 {booksection.author}</p>
+                <p>{booksection.author}</p>
               </div>
             </Link>
           </li>

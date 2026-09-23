@@ -7,6 +7,7 @@ export default function GnbLink({to, children}) {
     as={NavLink}
     to={to}
     className="gnb_link"
+    style={{color:'white',fontSize:'0.8rem'}}
     >
       {children}
     </Nav.Link>
