@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/Minumsa/static/css/main.0e2d5bb0.css",
-    "main.js": "/Minumsa/static/js/main.8c4d88a6.js",
+    "main.css": "/Minumsa/static/css/main.de4b8364.css",
+    "main.js": "/Minumsa/static/js/main.631101e4.js",
     "static/js/453.5dbd7ec6.chunk.js": "/Minumsa/static/js/453.5dbd7ec6.chunk.js",
+    "static/media/slick.eot": "/Minumsa/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Minumsa/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Minumsa/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Minumsa/index.html",
-    "main.0e2d5bb0.css.map": "/Minumsa/static/css/main.0e2d5bb0.css.map",
-    "main.8c4d88a6.js.map": "/Minumsa/static/js/main.8c4d88a6.js.map",
+    "static/media/slick.woff2": "/Minumsa/static/media/slick.690f0f2928abb870b888.woff2",
+    "main.de4b8364.css.map": "/Minumsa/static/css/main.de4b8364.css.map",
+    "main.631101e4.js.map": "/Minumsa/static/js/main.631101e4.js.map",
     "453.5dbd7ec6.chunk.js.map": "/Minumsa/static/js/453.5dbd7ec6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0e2d5bb0.css",
-    "static/js/main.8c4d88a6.js"
+    "static/css/main.de4b8364.css",
+    "static/js/main.631101e4.js"
   ]
 }
