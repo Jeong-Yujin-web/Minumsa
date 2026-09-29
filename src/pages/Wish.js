@@ -141,6 +141,7 @@ export default function Wish() {
   const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
   const [selectedIds, setSelectedIds] = useState([]);
+
   const handleAllCheck = (e) => {
     if (e.target.checked) {
       setSelectedIds(wish.map((item) => item.id));
@@ -148,16 +149,20 @@ export default function Wish() {
       setSelectedIds([]);
     }
   };
-    const handleCheck = (id) =>{
-    setSelectedIds((prev)=>{
-      const next=new Set(prev)
-      if (next.has(id)){
-        next.delete(id);
-      }else{
-        next.add(id);
+  const handleCheck = (id) => {
+    setSelectedIds((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((itemId) => itemId !== id);
+      } else {
+        return [...prev, id];
       }
-      return next; 
-    })
+    });
+  };
+  const handleDeleteSelected=()=>{
+    selectedIds.forEach((id)=>{
+      dispatch(deleteWish(id));
+    });
+    setSelectedIds([]);
   };
   return (
     <Wrapper>
@@ -173,7 +178,7 @@ export default function Wish() {
           <label htmlFor="whole"> 전체선택 </label>
         </div>
         <div className="whole_right">
-          <button><ImBin /></button>
+          <button onClick={handleDeleteSelected}><ImBin /></button>
           <button><FaShoppingCart/></button>
           <Link to='/Cart' className='cartLink'>장바구니</Link>
         </div>

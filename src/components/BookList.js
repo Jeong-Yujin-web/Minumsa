@@ -35,35 +35,32 @@ export default function BookList() {
               return(
                 <Col md={6} key={book.id} className='book_inner'>
                   <Link to={`/book/${book.category}/${book.id}`}  >
-                  <div className="book_left">
-                    <div className="book_img">
-                      <img src={`${process.env.PUBLIC_URL}${book.image}`} alt="도서 상품" />
+                    <div className="book_left">
+                      <div className="book_img">
+                        <img src={`${process.env.PUBLIC_URL}${book.image}`} alt="도서 상품" />
+                      </div>
                     </div>
-                    <div className="book_shadow">
-                      <img src={process.env.PUBLIC_URL + '/images/any/shadow.png'} alt="상품 그림자" />
+                    <div className="book_right">
+                      <p className='bookTitle'>{book.title}</p>
+                      <div className="text">
+                        <p>시리즈</p>
+                        <p> {book.category}</p>
+                        <p>|</p>
+                        <p>글</p>
+                        <p> {book.author}</p>
+                      </div>
+                      <div className="text">
+                        <p>출판사</p>
+                        <p>{book.publisher}</p>
+                        <p>|</p>
+                        <p>출판일</p>
+                        <p>{book.publishDate}</p>
+                      </div>
+                      <div className="text">
+                        <FaStar className='icon'/>
+                        <p>{book.rating}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="book_right">
-                    <p className='bookTitle'>{book.title}</p>
-                    <div className="text">
-                      <p>시리즈</p>
-                      <p> {book.category}</p>
-                      <p>|</p>
-                      <p>글</p>
-                      <p> {book.author}</p>
-                    </div>
-                    <div className="text">
-                      <p>출판사</p>
-                      <p>{book.publisher}</p>
-                      <p>|</p>
-                      <p>출판일</p>
-                      <p>{book.publishDate}</p>
-                    </div>
-                    <div className="text">
-                      <FaStar className='icon'/>
-                      <p>{book.rating}</p>
-                    </div>
-                  </div>
                   </Link>
                   <div className="btn_box booklist_btn">
                     <button className='btn_submit' onClick={()=> dispatch(addItem({

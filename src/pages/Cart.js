@@ -11,8 +11,9 @@ import { ImBin } from "react-icons/im";
 import {
   deleteItem,
   addCount,
-  subCount
+  subCount,
 } from '../slices/cartSlice.js';
+import { addWish } from '../slices/wishSlice.js';
 
 import Table from 'react-bootstrap/Table';
 
@@ -40,7 +41,7 @@ const Whole= styled.div`
   background-color: #f7f7f7;
   padding: 10px;
   justify-content: space-between;
-  aling-item: center;
+  aling-items: center;
   margin-bottom: 10px;
   .whole_left{
     display: flex;
@@ -219,11 +220,11 @@ const Fix_inner = styled.div`
 `;
 
 export default function Cart() {  
-
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [selectedIds, setSelectedIds] = useState([]);
+
   const handleAllCheck = (e) => {
     if (e.target.checked) {
       setSelectedIds(cart.map((item) => item.id));
@@ -231,16 +232,20 @@ export default function Cart() {
       setSelectedIds([]);
     }
   };
-  const handleCheck = (id) =>{
-    setSelectedIds((prev)=>{
-      const next=new Set(prev)
-      if (next.has(id)){
-        next.delete(id);
-      }else{
-        next.add(id);
+  const handleCheck = (id) => {
+    setSelectedIds((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((itemId) => itemId !== id);
+      } else {
+        return [...prev, id];
       }
-      return next; 
-    })
+    });
+  };
+  const handleDeleteSelected=()=>{
+    selectedIds.forEach((id)=>{
+      dispatch(deleteItem(id));
+    });
+    setSelectedIds([]);
   };
   const totalCount = cart.reduce((total, item) => {
     return total + item.count;
@@ -274,8 +279,8 @@ export default function Cart() {
           <label htmlFor="whole"> 전체선택 </label>
         </div>
         <div className="whole_right">
-          <button><ImBin /></button>
-          <button><GoHeartFill/></button>
+          <button onClick={handleDeleteSelected}><ImBin /></button>
+          <button onClick={handleWishSelected}><GoHeartFill/></button>
           <Link to='/Wish' className='wishLink'>찜 목록</Link>
         </div>
       </Whole>
