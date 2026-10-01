@@ -5,9 +5,13 @@ const wish = createSlice({
   initialState: [],
   reducers: {
     addWish(state, action) {
-      state.push(action.payload);
+      const item = state.find(
+        (item)=> item.id === action.payload.id
+      );
+      if(!item){
+        state.push(action.payload);
+      }
     },
-
     deleteWish(state, action) {
       const index = state.findIndex(
         item => item.id === action.payload

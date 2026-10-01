@@ -4,12 +4,18 @@ const cart=createSlice({
   name: 'cart',
   initialState:[],
   reducers:{
-    addItem(state,action){
-      const index =state.findIndex((findId) => findId.id === action.payload.id);
-      if (index > -1){
+    addItem(state, action) {
+      const index = state.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (index > -1) {
         state[index].count++;
-      }else{
-        state.push(action.payload);
+      } else {
+        state.push({
+          ...action.payload,
+          count: action.payload.count || 1,
+        });
       }
     },
     deleteItem(state,action){

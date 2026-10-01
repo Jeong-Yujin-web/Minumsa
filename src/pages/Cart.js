@@ -241,12 +241,26 @@ export default function Cart() {
       }
     });
   };
-  const handleDeleteSelected=()=>{
-    selectedIds.forEach((id)=>{
-      dispatch(deleteItem(id));
-    });
-    setSelectedIds([]);
-  };
+  const handleDeleteSelected = () => {
+  selectedIds.forEach((id) => {
+    dispatch(deleteItem(id));
+  });
+
+  setSelectedIds([]);
+};
+
+const handleWishSelected = () => {
+  const selectedItems = cart.filter((item) =>
+    selectedIds.includes(item.id)
+  );
+
+  selectedItems.forEach((item) => {
+    dispatch(addWish(item));
+  });
+
+  setSelectedIds([]);
+};
+
   const totalCount = cart.reduce((total, item) => {
     return total + item.count;
   }, 0);

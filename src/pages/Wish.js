@@ -11,6 +11,9 @@ import { ImBin } from "react-icons/im";
 import {
   deleteWish
 } from '../slices/wishSlice.js';
+import {
+  addItem
+} from '../slices/cartSlice.js';
 
 import Table from 'react-bootstrap/Table';
 
@@ -164,6 +167,18 @@ export default function Wish() {
     });
     setSelectedIds([]);
   };
+  const handleCartSelected = () => {
+    const selectedItems = wish.filter((item) =>
+      selectedIds.includes(item.id)
+    );
+
+    selectedItems.forEach((item) => {
+      dispatch(addItem(item));
+    });
+
+    setSelectedIds([]);
+  };
+
   return (
     <Wrapper>
       <p className='title'>{user.name ? `${user.name}님의 찜 목록` : '찜 목록'}</p>
@@ -179,7 +194,7 @@ export default function Wish() {
         </div>
         <div className="whole_right">
           <button onClick={handleDeleteSelected}><ImBin /></button>
-          <button><FaShoppingCart/></button>
+          <button onClick={handleCartSelected}><FaShoppingCart/></button>
           <Link to='/Cart' className='cartLink'>장바구니</Link>
         </div>
       </Whole>
