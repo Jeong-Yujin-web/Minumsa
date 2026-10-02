@@ -26,6 +26,28 @@ import BookList from './components/BookList';
 import ComunitySection from './components/ComunitySection';
 import EventSection from './components/EventSection';
 
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
+
+function TopButton() {
+
+  const handleTop = () => {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: 0,
+      ease: 'power2.out'
+    });
+  };
+
+  return (
+    <button className="top_btn" onClick={handleTop}>
+      TOP
+    </button>
+  );
+}
+
 function App() {
   const userName = useSelector((state) => state.user.name);
   return (
@@ -166,6 +188,9 @@ function App() {
           </div>
         </div>
       </footer>
+      <aside>
+        <TopButton style=""/>
+      </aside>  
     </div>
   );
 }

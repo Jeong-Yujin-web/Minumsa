@@ -197,14 +197,12 @@ export default function Login() {
     <Wrapper>
       <h3 className="title">{userName}님</h3>
       <p>현재 로그인되어 있습니다.</p>
-
-      <button onClick={() => dispatch(logout())} style={{marginTop:'30px', width:'100px', padding:'5px'}}>
+      <button onClick={() => dispatch(logout())} style={{marginTop:'30px', width:'100px', padding:'5px', border:'none', borderRadius:'10px'}}>
         로그아웃
       </button>
     </Wrapper>
     );
   }
-
   return (
     <Wrapper>
       <h3 className="title">로그인</h3>
