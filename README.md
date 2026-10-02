@@ -148,13 +148,9 @@ https://github.com/user-attachments/assets/d26f547e-c6f1-4ddd-b618-2a019cfbf490
 ---
 ### GitHub
 
-👉 https://github.com/Jeong-Yujin-web/Minumsa
+https://jeong-yujin-web.github.io/Minumsa/
 
-### 배포 사이트
-
-👉 https://jeong-yujin-web.github.io/Minumsa/
-
-### 💭 회고
+### 회고
 
 React를 활용하여 기존 웹사이트를 컴포넌트 단위로 구조화하면서
 재사용 가능한 컴포넌트 설계와 데이터 관리의 중요성을 경험할 수 있었습니다.
