@@ -331,7 +331,7 @@ https://github.com/user-attachments/assets/d26f547e-c6f1-4ddd-b618-2a019cfbf490
 ### GitHub
 https://jeong-yujin-web.github.io/Minumsa/
 
-###회고
+### 회고
 
 React를 활용하여 기존 웹사이트를 컴포넌트 단위로 구조화하며
 컴포넌트 재사용과 상태 관리의 중요성을 경험할 수 있었습니다.
