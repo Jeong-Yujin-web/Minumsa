@@ -173,6 +173,7 @@ export default function Login() {
 }
 ```
 </details>
+
 #### 💡 셀프 코드리뷰 & 배운 점 (AI 협업)
 * **쿠키 제어 로직 학습**: '아이디 저장' 기능을 구현하면서 바닐라 JavaScript로 쿠키를 생성하고 조회하는 `getCookie`, `setCookie` 함수를 작성했습니다. `document.cookie`에 저장된 값을 가져와 필요한 데이터로 나누어 사용하는 과정을 구현하면서 쿠키의 동작 방식과 브라우저 저장소에 대해 이해할 수 있었습니다.
 
