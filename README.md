@@ -82,11 +82,6 @@ https://github.com/user-attachments/assets/fbbad9f4-b9ae-4f7e-91bc-21d396127d03
 
 https://github.com/user-attachments/assets/03d369a7-4b6f-4e29-b88a-3ef3d9d2b547
 
-### 03. 로그인 및 사용자 상태 관리
-로그인 성공 시 GNB에 사용자 이름을 표시하고, 로그인 상태에 따라 로그인 UI와 사용자 정보 및 로그아웃 UI가 변경되도록 구현하였습니다.
-
-https://github.com
-
 #### 💻 핵심 코드 보기
 <details>
 <summary>🔍 Login.js 코드 펼치기</summary>
@@ -190,10 +185,6 @@ export default function Login() {
 Redux Toolkit을 활용하여 사용자 정보와 장바구니, 찜 목록 등의 상태를 전역으로 관리하고 상품 추가·삭제 및 수량 변경 기능을 구현하였습니다.
 
 https://github.com/user-attachments/assets/93952252-42b2-4b4f-bc87-47ff2cb2e95a
-### 04. Redux Toolkit을 활용한 상태 관리
-Redux Toolkit을 활용하여 사용자 정보와 장바구니, 찜 목록 등의 상태를 전역으로 관리하고 상품 추가·삭제 및 수량 변경 기능을 구현하였습니다.
-
-https://github.com
 
 #### 💻 핵심 코드 보기
 <details>
@@ -307,7 +298,9 @@ export default function Cart() {
 
 #### 💡 셀프 코드리뷰 & 배운 점
 * **비즈니스 로직 연산 효율화**: 장바구니 상품의 수량과 가격, 할인 금액, 적립 포인트 등을 한 번에 계산하기 위해 `reduce`를 활용했습니다. 상품의 수량이나 상태가 바뀔 때마다 계산된 값이 화면에 바로 반영되는 것을 구현하면서, React에서 데이터와 UI가 연결되는 방식을 이해할 수 있었습니다.
+
 * **복잡한 다중 체크박스 상태 제어**: 전체 선택 기능과 개별 선택 상태의 연동을 구현하기 위해 로컬 상태 `selectedIds` 배열을 두고 처리했습니다. `checked={cart.length > 0 && selectedIds.length === cart.length}` 조건을 적용하여 데이터와 UI 상태가 양방향으로 어긋나지 않도록 정밀하게 바인딩했습니다.
+
 * **Redux Toolkit의 편의성 체감**: Redux Toolkit을 적용하면서 `createSlice`를 사용해 상태를 관리하는 방법을 익혔습니다. `state.push()`나 `state.splice()`처럼 배열을 직접 수정하는 방식으로 작성해도 Immer가 불변성을 관리해 준다는 것을 알게 되었고, 기존 Redux보다 간결하게 상태 관리 로직을 작성할 수 있다는 점을 배웠습니다.
 
 * **앞으로의 보완점**: 현재 `subCount`에서 수량이 음수가 되지 않도록 방어 코드를 적용했습니다. 앞으로는 수량이 0이 되었을 때 상품을 자동으로 삭제하거나, 최소 수량을 1개로 제한하는 방식으로 사용자 입장에서 더 편리하게 사용할 수 있도록 개선해 보고 싶습니다.
