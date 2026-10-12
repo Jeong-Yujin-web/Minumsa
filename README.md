@@ -14,6 +14,11 @@
 * 로그인 및 사용자 상태 관리
 * React Router를 활용한 SPA 페이지 이동
 * Redux Toolkit을 활용한 전역 상태 관리
+  
+## 📋 기획안
+기획서 프로젝트의 기획 배경과 요구사항은 아래 문서에서 확인할 수 있습니다.
+
+👉 [기획안 PDF 보기](docs/Minumsa_React Project.pdf)
 
 ## 🛠️ 기술 스택
 
