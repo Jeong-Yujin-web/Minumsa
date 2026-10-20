@@ -41,24 +41,57 @@
 ## 📁 프로젝트 구조
 
 ```text
-Minumsa_React
+Minumsa_React/
 ├── public/
 │   ├── images/
 │   └── index.html
 ├── src/
 │   ├── components/
+│   │   ├── BookList.js
+│   │   ├── BookList.css
+│   │   ├── BookSection.js
+│   │   ├── BookSection.css
+│   │   ├── ComunitySection.js
+│   │   ├── EventSection.js
+│   │   ├── Event_Comunity.css
+│   │   └── GnbLink.js
+│   │
 │   ├── data/
+│   │   ├── books.js
+│   │   ├── events_comunity.js
+│   │   └── users.js
+│   │
 │   ├── pages/
+│   │   ├── Best.js
+│   │   ├── Book.js
+│   │   ├── BookDetail.js
+│   │   ├── BookDetail.css
+│   │   ├── Cart.js
+│   │   ├── Company.js
+│   │   ├── Company.css
+│   │   ├── Comunity.js
+│   │   ├── Event.js
+│   │   ├── Home.js
+│   │   ├── login.html
+│   │   ├── Login.js
+│   │   └── Wish.js
+│   │
 │   ├── slices/
+│   │   ├── cartSlice.js
+│   │   ├── userSlice.js
+│   │   └── wishSlice.js
+│   │
 │   ├── store/
+│   │   └── store.js
+│   │
 │   ├── styles/
-│   ├── App.css
-│   ├── App.js
-│   ├── App.test.js
-│   ├── index.css
-│   ├── index.js
-│   └── setupTests.js
+│   │   └── common.css
+│   │
+│   └── App.css
+│
+├── package.json
 └── README.md
+
 ```
 
 ## ⭐ 주요 구현 내용
