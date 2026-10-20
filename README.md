@@ -122,7 +122,6 @@ https://github.com/user-attachments/assets/03d369a7-4b6f-4e29-b88a-3ef3d9d2b547
 
 <br><br>
 
-#### 💻 핵심 코드 보기
 <details>
 <summary>🔍 Login.js 코드 펼치기</summary>
 
@@ -221,7 +220,6 @@ Redux Toolkit을 활용하여 사용자 정보와 장바구니, 찜 목록 등�
 
 https://github.com/user-attachments/assets/93952252-42b2-4b4f-bc87-47ff2cb2e95a
 
-#### 💻 핵심 코드 보기
 
 💡 셀프 코드리뷰
 * Redux Toolkit의 createSlice 활용 - 장바구니 상품 추가·삭제 및 수량 관리 구현
